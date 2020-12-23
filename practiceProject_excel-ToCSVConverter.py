@@ -9,7 +9,7 @@ for excelFile in os.listdir('.'):
             sheet = wb.get_sheet_by_name(sheetName)
 
             # Create the CSV filename from the Excel filename and sheet title.
-            csvFile = open('s' + str(excelFile.strip('.xlsx')) + '_' + str(sheetName) + '.csv', 'w', newline ='')
+            csvFile = open(str(excelFile.removesuffix('.xlsx')) + '_' + str(sheetName) + '.csv', 'w', newline ='')
             # Create the csv.writer object for this CSV file.
             csvWriter = csv.writer(csvFile)
 
